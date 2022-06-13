@@ -21,9 +21,12 @@ Note: Much of this code has been refactored from tax-credit-code and tax-credit-
 
 # Initializing 
 1. Clone tax-credit-code 
-  '''git clone https://github.com/Metu-O/tax-credit-code)
+
+  '''
+  git clone https://github.com/Metu-O/tax-credit-code)
   cd tax-credit-code
-  pip install .'''
+  pip install .
+  '''
 
 2. Clone tax-credit-data
 .... add details here 
