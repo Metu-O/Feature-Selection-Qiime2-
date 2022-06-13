@@ -26,7 +26,6 @@ Note: Much of this code has been refactored from tax-credit-code and tax-credit-
   git clone https://github.com/Metu-O/tax-credit-code
   cd tax-credit-code
   pip install .
-  
   ```
 
 2. Clone tax-credit-data
