@@ -1,14 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# 1. Clone tax-credit-code and tax-credit-data
-# 2. move the tax-credit-data directory into the tax-credit-code directory
-# 3. run all codes from inside the tax-credit-code directory
-
 # Import modules
-
-# In[1]:
-
 
 get_ipython().run_line_magic('matplotlib', 'inline')
 import os
@@ -33,11 +23,7 @@ from tax_credit.eval_framework import (evaluate_results,
 
 # Configure local environment-specific values
 
-# In[2]:
-
-
-## project_dir should be the directory where you've downloaded (or cloned) the 
-## tax-credit repository. 
+# project_dir should be the directory where you've downloaded (or cloned) the tax-credit repository. 
 project_dir = expandvars("tax-credit-data")
 
 ## expected_results_dir contains expected composition data in the structure
