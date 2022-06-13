@@ -29,20 +29,20 @@ Note: Much of this code has been refactored from tax-credit-code and tax-credit-
   ```
 
 2. Clone tax-credit-data
-.... add details here 
 
+ ```
+  git clone https://github.com/Metu-O/tax-credit-data
+  pip install .
+  ```
+  
 3. Clone Feature-Selection-Qiime2
 
   ```
   git clone https://github.com/Metu-O/Feature-Selection-Qiime2
-  cd tax-credit-code
   pip install .
   ```
 
-3. Move the tax-credit-data directory and Feature-Selection-Qiime2 codes into the tax-credit-code directory
-.... add details here
-
-4. Run all codes from inside the tax-credit-code directory
+4. tax-credit-data and Feature-Selection-Qiime2 should be cloned into the tax-credit-code directory
 
 # Run codes 
 
