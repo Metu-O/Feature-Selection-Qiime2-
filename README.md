@@ -32,7 +32,12 @@ Note: Much of this code has been refactored from tax-credit-code and tax-credit-
 .... add details here 
 
 3. Clone Feature-Selection-Qiime2
-.... add details here 
+
+  ```
+  git clone https://github.com/Metu-O/Feature-Selection-Qiime2
+  cd tax-credit-code
+  pip install .
+  ```
 
 3. Move the tax-credit-data directory and Feature-Selection-Qiime2 codes into the tax-credit-code directory
 .... add details here
