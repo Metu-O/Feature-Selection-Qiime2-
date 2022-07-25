@@ -19,29 +19,21 @@ Note: Much of the code and data in the tax_credit folder has been refactored fro
 ... add details here 
 
 # Initializing 
-1. Clone tax-credit-code 
 
-  ```
-  git clone https://github.com/Metu-O/tax-credit-code
-  cd tax-credit-code
-  pip install .
-  ```
-
-2. Clone tax-credit-data
+1. Clone tax-credit-data
 
  ```
   git clone https://github.com/Metu-O/tax-credit-data
   pip install .
   ```
   
-3. Clone Feature-Selection-Qiime2
+2. Clone Feature-Selection-Qiime2
 
   ```
   git clone https://github.com/Metu-O/Feature-Selection-Qiime2
   pip install .
   ```
 
-4. tax-credit-data and Feature-Selection-Qiime2 should be cloned into the tax-credit-code directory
 
 # Run codes 
 
