@@ -6,10 +6,9 @@ Note: Much of this code has been refactored from tax-credit-code and tax-credit-
 
 # Feature selection methods tested
 
-1. Filter Feature Selection
-3. Wrapper Feature Selection
-4. Embedded Feature Section 
-
+1. Filter Method - Univariate Feature Selection
+3. Wrapper Method - Recursive Feature Selection
+4. Embedded Method - Tree-based Feature Selection with SelectFromModel
 # Filter Feature Selection
 ... add details here
 
