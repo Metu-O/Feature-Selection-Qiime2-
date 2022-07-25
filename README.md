@@ -1,6 +1,6 @@
 # Feature-Selection-Qiime2
 
-This repository describes the method used to test difference sci-kit learn feature selection methods for use in Qiime2 Naive Bayes taxonomy classifier
+This repository describes the methods used to test different sci-kit learn feature selection methods as part of Qiime2 q2-classifier.
 
 Note: Much of this code has been refactored from tax-credit-code and tax-credit-data (citations below)
 
