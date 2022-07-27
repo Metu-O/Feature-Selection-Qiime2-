@@ -34,7 +34,7 @@ from tax_credit.eval_framework import (evaluate_results,
 
 ## project_dir should be the directory where you've downloaded (or cloned) the 
 ## tax-credit repository. 
-project_dir = expandvars("tax-credit-data")
+project_dir = expandvars('$HOME/tax-credit-data/')
 
 ## expected_results_dir contains expected composition data in the structure
 ## expected_results_dir/<dataset name>/<reference name>/expected/
