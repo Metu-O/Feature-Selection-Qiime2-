@@ -268,7 +268,7 @@ train_and_run_classifier(method_parameters_combinations, reference_dbs, pipeline
 # In[18]:
 
 
-Generate per-method biom tables
+#Generate per-method biom tables
 #Modify the taxonomy_glob below to point to the taxonomy assignments that were generated above. 
 #This may be necessary if filepaths were altered in the preceding cells.
 
