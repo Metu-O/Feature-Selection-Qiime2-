@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# Run this code in the qiime2-2022.2 environment.
 # Import modules and packages
 
 # In[1]:
