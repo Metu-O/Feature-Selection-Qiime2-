@@ -48,7 +48,7 @@ from tax_credit.framework_functions import (
     gen_param_sweep, generate_per_method_biom_tables, move_results_to_repository)
 
 
-# Environment preparation - do not change anything in this cell.
+# Environment preparation
 
 # In[2]:
 
