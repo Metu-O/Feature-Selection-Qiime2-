@@ -73,8 +73,9 @@ if not os.path.exists(outdir):
 
 
 #dataset_ids = ['mock-3']
-dataset_ids = ['mock-1', 'mock-2', 'mock-3', 'mock-4', 'mock-5','mock-6', 'mock-7', 'mock-8'] 
-method_ids = ['q2-NB', 'q2-NB-Univariate', 'q2-NB-SFM']
+dataset_ids = ['mock-1', 'mock-2', 'mock-3', 'mock-4', 'mock-5','mock-6', 'mock-7', 'mock-8','mock-12','mock-13',
+               'mock-14', 'mock-15', 'mock-16','mock-18', 'mock-19', 'mock-20', 'mock-21', 'mock-22']
+method_ids = ['q2-NB', 'q2-NB-Univariate', 'q2-NB-SFM','naive-bayes','naive-bayes-bespoke']
 ref_ids = ['gg_13_8_otus']
 
 
@@ -112,7 +113,7 @@ mock_results = evaluate_results(results_dirs,
 
 
 color_palette={
-    'q2-NB': 'black', 'q2-NB-Univariate':'red', 'q2-NB-SFM': 'blue'}
+    'q2-NB':'black', 'q2-NB-Univariate':'red', 'q2-NB-SFM':'blue','naive-bayes':'green','naive-bayes-bespoke':'yellow'}
 
 y_vars = ["Precision", "Recall", "F-measure", "Taxon Accuracy Rate", "Taxon Detection Rate"]
 
