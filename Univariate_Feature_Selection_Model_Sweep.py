@@ -49,8 +49,9 @@ from tax_credit.framework_functions import (
 
 # In[8]:
 
-
-project_dir = expandvars('$HOME/tax-credit-data/') #change to cloned tax-credit-data directory
+## project_dir should be the directory where you've downloaded (or cloned) the 
+## tax-credit-data repository. 
+project_dir = expandvars('$HOME/tax-credit-data/') 
 analysis_name = 'mock-community'
 data_dir = join(project_dir, 'data', analysis_name)
 precomputed_dir = join(project_dir, 'data', 'precomputed-results', analysis_name)
