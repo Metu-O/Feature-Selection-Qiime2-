@@ -175,6 +175,7 @@ heatmap_from_data_frame(mock_results, metric="Taxon Detection Rate", rows=["Meth
 
 # In[23]:
 
+mock_results_6 = mock_results[mock_results['Level'] == 6]
 
 pd.set_option('display.max_colwidth', None)
 for dataset in mock_results_6['Dataset'].unique():
