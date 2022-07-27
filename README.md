@@ -24,14 +24,12 @@ Note: Much of the code and data in the tax_credit folder has been refactored fro
 
  ```
   git clone https://github.com/Metu-O/tax-credit-data
-  pip install .
   ```
   
 2. Clone Feature-Selection-Qiime2
 
   ```
   git clone https://github.com/Metu-O/Feature-Selection-Qiime2
-  pip install .
   ```
 
 
