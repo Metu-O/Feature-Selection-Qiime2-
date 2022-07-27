@@ -2,8 +2,6 @@
 
 This repository describes the methods used to test different sci-kit learn feature selection methods as part of Qiime2 q2-classifier.
 
-Note: Much of the code and data in the tax_credit folder has been refactored from tax-credit-code and tax-credit-data (citations below)
-
 # Feature selection methods tested
 
 1. Filter Method - Univariate Feature Selection
