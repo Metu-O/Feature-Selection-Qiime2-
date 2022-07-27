@@ -34,7 +34,7 @@ This repository describes the methods used to test different sci-kit learn featu
 # Run codes 
 
 Run feature selection python files (follow comments in codes for more information)
-1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 recommended parameters.
+1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters.
 2. Univariate_Feature_Selection_Model_Sweep.py contains code that runs the classifier while testing different parameters of a scikit-learn filter feature selection method (SelectKBest).
 3. Recursive_Feature_Selection_Model_Sweep.py contains code that runs the classifier while testing different parameters of a scikit-learn wrapper feature selection method (Recursive Feature Selection) ###not included
 4. Feature_Selection_from_Model_Sweep.py contains code that runs the classifier while testing different parameters of a scikit-learn embedded feature selection method (SelectFromModel).
