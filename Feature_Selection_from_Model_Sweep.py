@@ -197,8 +197,7 @@ method_parameters_combinations = {
                          'feat_sel__max_features':[2000, 4000, 6000, 8000]}}
     
 reference_dbs = {'gg_13_8_otus' : (join(reference_database_dir, 'gg_13_8_otus/99_otus_v4.qza'), 
-                                   join(reference_database_dir, 'gg_13_8_otus/99_otu_tax.qza'))}
-
+                                   join(reference_database_dir, 'gg_13_8_otus/99_otu_taxonomy_clean.tsv.qza'))}
 
 # Preparing the pipelines
 
@@ -246,7 +245,7 @@ pipelines
  #                        'feat_sel__max_features':[2000, 4000, 6000, 8000]}}
     
 #reference_dbs = {'gg_13_8_otus' : (join(reference_database_dir, 'gg_13_8_otus/99_otus_v4.qza'), 
-#                                   join(reference_database_dir, 'gg_13_8_otus/99_otu_tax.qza'))}
+#                                   join(reference_database_dir, 'gg_13_8_otus/99_otu_taxonomy_clean.tsv.qza'))}
 
 
 # Do the Sweep
