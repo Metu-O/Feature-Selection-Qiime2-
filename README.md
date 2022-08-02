@@ -5,15 +5,12 @@ This repository describes the methods used to test different sci-kit learn featu
 # Feature selection methods tested
 
 1. Filter Method - Univariate Feature Selection
-3. Wrapper Method - Recursive Feature Selection
-4. Embedded Method - Tree-based Feature Selection with SelectFromModel
-# Filter Feature Selection
+2. Embedded Method - Using SelectFromModel
+
+# Univariate Feature Selection Methods Tested
 ... add details here
 
-# Wrapper Feature Selection
-... add details here
-
-# Embedded Feature Selection
+# SelectFromModel Feature Selection Methods Tested
 ... add details here 
 
 # Initializing 
@@ -35,9 +32,12 @@ This repository describes the methods used to test different sci-kit learn featu
 
 Run feature selection python files (follow comments in codes for more information)
 1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters.
-2. Univariate_Feature_Selection_Model_Sweep.py contains code that runs the classifier while testing different parameters of a scikit-learn filter feature selection method (SelectKBest).
-3. Recursive_Feature_Selection_Model_Sweep.py contains code that runs the classifier while testing different parameters of a scikit-learn wrapper feature selection method (Recursive Feature Selection) ###not included
-4. Feature_SelectFromModel_Sweep.py contains code that runs the classifier while testing different parameters of a scikit-learn embedded feature selection method (SelectFromModel).
+2. Univariate_Feature_Selection_Chi2.py contains code that runs the classifier with univariate feature selection, specifically sklearn's chi2 method.   
+3. Univariate_Feature_Selection_F_Classif.py contains code that runs the classifier with univariate feature selection, specifically sklearn's f_classif method.
+4. Univariate_Feature_Selection_MI_Classif.py contains code that runs the classifier with univariate feature selection, specifically sklearn's mutual_info_classif method.
+5. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. 
+6. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator. 
+7. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. 
 
 # Evaluate method accuracy
 
