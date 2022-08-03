@@ -2,16 +2,16 @@
 
 This repository describes the methods used to test different sci-kit learn feature selection methods as part of Qiime2 q2-classifier.
 
-# Feature selection methods tested
+# Embedded Feature Selection
 
-1. Filter Method - Univariate Feature Selection
-2. Embedded Method - Using SelectFromModel
+# 1. SelectFromModel Using Random Forest Estimator
+... add details here 
 
-# Univariate Feature Selection Methods Tested
+# 2. SelectFromModel Using Stochastic Gradient Descent Estimator
 ... add details here
 
-# SelectFromModel Feature Selection Methods Tested
-... add details here 
+# 3. SelectFromModel Using Multinomial Naive Bayes Estimator
+... add details here
 
 # Initializing 
 
@@ -32,12 +32,9 @@ This repository describes the methods used to test different sci-kit learn featu
 
 Run feature selection python files (follow comments in codes for more information)
 1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters.
-2. Univariate_Feature_Selection_Chi2.py contains code that runs the classifier with univariate feature selection, specifically sklearn's chi2 method.   
-3. Univariate_Feature_Selection_F_Classif.py contains code that runs the classifier with univariate feature selection, specifically sklearn's f_classif method.
-4. Univariate_Feature_Selection_MI_Classif.py contains code that runs the classifier with univariate feature selection, specifically sklearn's mutual_info_classif method.
-5. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. 
-6. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator. 
-7. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. 
+2. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. 
+3. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator. 
+4. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. 
 
 # Evaluate method accuracy
 
