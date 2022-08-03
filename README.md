@@ -14,7 +14,7 @@ The sklearn stochastic gradient descent (SGD) classifier was used as a base esti
 
 # 3. SelectFromModel Using Multinomial Naive Bayes Estimator
 
-The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a base estimator in the feature selection step of my classification pipeline. RFC has a feature_importances_ attribute after fitting, which was used as the importance_getter parameter. For more details about sklearn's MultinomialNB, click on this link. 
+The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a base estimator in the feature selection step of my classification pipeline. RFC has a feature_importances_ attribute after fitting, which was used as the importance_getter parameter. For more details about sklearn's MultinomialNB, click on this [link](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html). 
 
 [I'm an inline-style link](https://www.google.com)
 
