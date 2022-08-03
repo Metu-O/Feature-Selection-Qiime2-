@@ -47,6 +47,6 @@ Compare method accuracy by running Evaluate_method_accuracy.py (follow comments 
 
 1. Bokulich, N.A., Kaehler, B.D., Rideout, J.R. et al. Optimizing taxonomic classification of marker-gene amplicon sequences with QIIME 2’s q2-feature-classifier plugin. Microbiome 6, 90 (2018). https://doi.org/10.1186/s40168-018-0470-z
 
-2. Scikit-learn: Machine Learning in Python, Pedregosa et al., JMLR 12, pp. 2825-2830, 2011
+2. Osele, M. Machine Learning for Biological Data. ... (incomplete). 
 
-3. Osele, M. Machine Learning for Biological Data. ... (incomplete). 
+3. Scikit-learn: Machine Learning in Python, Pedregosa et al., JMLR 12, pp. 2825-2830, 2011
