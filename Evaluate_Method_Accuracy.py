@@ -121,8 +121,8 @@ mock_results = evaluate_results(results_dirs,
 color_palette={ 
     'q2-NB':'black',
     'q2-SFM-RF':'darkgreen',
-    'q2-SFM-SDG':'green',
-    'q2-SFM-NB':'lime',
+    'q2-SFM-SDG':'red',
+    'q2-SFM-NB':'blue',
     }
 
 y_vars = ["Precision", "Recall", "F-measure", "Taxon Accuracy Rate", "Taxon Detection Rate"]
