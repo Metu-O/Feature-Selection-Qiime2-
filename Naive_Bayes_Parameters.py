@@ -187,7 +187,7 @@ dataset_reference_combinations = [
 
 method_parameters_combinations = {
     'q2-NB': {'confidence': [0.7],
-                         'classify__alpha': [0.01],
+                         'classify__alpha': [0.001],
                          'feat_ext__ngram_range': [[8,8]]}}
     
 reference_dbs = {'gg_13_8_otus' : (join(reference_database_dir, 'gg_13_8_otus/99_otus_v4.qza'), 
@@ -231,7 +231,7 @@ pipelines
 #
 #method_parameters_combinations = {
  #   'q2-NB': {'confidence': [0.7],
-  #                       'classify__alpha': [0.01],
+  #                       'classify__alpha': [0.001],
    #                      'feat_ext__ngram_range': [[8,8]],
     #                     'feat_sel__estimator': [MultinomialNB()]}}
 #    
