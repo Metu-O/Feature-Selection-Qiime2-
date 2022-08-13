@@ -33,7 +33,7 @@ The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a bas
 
 # Run codes 
 
-Run the feature selection python files in the repository (follow comments in codes for more information)
+Run the feature selection python files in the 'Feature-Selection-Qiime2' directory (follow comments in codes for more information)
 1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters.
 2. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. 
 3. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator. 
