@@ -191,9 +191,8 @@ method_parameters_combinations = {
               'feat_ext__n_features':[2000, 4000, 6000, 8000],
               'feat_ext__ngram_range': [[8,8]]}}
     
-reference_dbs = {'gg_13_8_otus' : (join(reference_database_dir, 'gg_13_8_99/99_otus_v4.qza'), 
-                                   join(reference_database_dir, 'gg_13_8_99/99_otu_taxonomy_clean.qza'))
-                }
+reference_dbs = {'gg_13_8_otus' : (join(reference_database_dir, 'gg_13_8_otus/99_otus_v4.qza'), 
+                                   join(reference_database_dir, 'gg_13_8_otus/99_otu_taxonomy_clean.tsv.qza'))}
 
 # Preparing the pipelines
 # #The below pipelines are used to specify the scikit-learn classifiers that are used for assignment.
