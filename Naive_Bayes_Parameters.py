@@ -187,12 +187,13 @@ dataset_reference_combinations = [
 
 method_parameters_combinations = {
     'q2-NB': {'confidence': [0.7],
-                         'classify__alpha': [0.001],
-                         'feat_ext__ngram_range': [[8,8]]}}
+              'classify__alpha': [0.001],
+              'feat_ext__n_features':[2000, 4000, 6000, 8000],
+              'feat_ext__ngram_range': [[8,8]]}}
     
-reference_dbs = {'gg_13_8_otus' : (join(reference_database_dir, 'gg_13_8_otus/99_otus_v4.qza'), 
-                                   join(reference_database_dir, 'gg_13_8_otus/99_otu_taxonomy_clean.tsv.qza'))}
-
+reference_dbs = {'gg_13_8_otus' : (join(reference_database_dir, 'gg_13_8_99/99_otus_v4.qza'), 
+                                   join(reference_database_dir, 'gg_13_8_99/99_otu_taxonomy_clean.qza'))
+                }
 
 # Preparing the pipelines
 # #The below pipelines are used to specify the scikit-learn classifiers that are used for assignment.
@@ -202,7 +203,7 @@ reference_dbs = {'gg_13_8_otus' : (join(reference_database_dir, 'gg_13_8_otus/99
 
 # pipeline params common to all classifiers are set here
 hash_params = dict(
-    analyzer='char_wb', n_features=8192, ngram_range=[8, 8],alternate_sign=False)
+    analyzer='char_wb',ngram_range=[8, 8],alternate_sign=False)
 
 
 # any params common to all classifiers can be set here
@@ -231,10 +232,10 @@ pipelines
 #
 #method_parameters_combinations = {
  #   'q2-NB': {'confidence': [0.7],
-  #                       'classify__alpha': [0.001],
-   #                      'feat_ext__ngram_range': [[8,8]],
-    #                     'feat_sel__estimator': [MultinomialNB()]}}
-#    
+  #            'classify__alpha': [0.001],
+   #           'feat_ext__n_features':[8000],
+   #           'feat_ext__ngram_range': [[8,8]]}}
+        
 #reference_dbs = {'gg_13_8_otus' : (join(reference_database_dir, 'gg_13_8_otus/99_otus_v4.qza'), 
 #                                   join(reference_database_dir, 'gg_13_8_otus/99_otu_taxonomy_clean.tsv.qza'))}
 
