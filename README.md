@@ -39,6 +39,8 @@ Run the feature selection python files in the 'Feature-Selection-Qiime2' directo
 3. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator. 
 4. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. 
 
+note: running these codes takes hours and may require a high computing processor. Do not wait around.
+
 # Evaluate method accuracy
 
 Compare method accuracy by running Evaluate_method_accuracy.py (follow comments in codes for more information)
