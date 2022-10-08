@@ -30,6 +30,20 @@ The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a bas
   git clone https://github.com/Metu-O/Feature-Selection-Qiime2
   ```
 
+#File paths 
+
+Experienced users xxx
+
+```
+project_dir = expandvars('$HOME/tax-credit-data/')
+analysis_name = 'mock-community'
+data_dir = join(project_dir, 'data', analysis_name)
+precomputed_dir = join(project_dir, 'data', 'precomputed-results', analysis_name)
+results_dir = join(project_dir, 'temp_results_narrow')
+if not os.path.exists(results_dir):
+ os.makedirs(results_dir)
+reference_database_dir = join(project_dir, 'data','ref_dbs')
+```
 
 # Run codes 
 
