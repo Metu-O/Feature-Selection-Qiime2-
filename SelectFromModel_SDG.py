@@ -11,6 +11,7 @@ import json
 import tempfile
 from itertools import product
 import argparse
+import pathlib
 from qiime2.plugins import feature_classifier
 from qiime2 import Artifact
 from joblib import Parallel, delayed
