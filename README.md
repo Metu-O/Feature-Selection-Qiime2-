@@ -56,7 +56,7 @@ python Naive_Bayes_Parameters.py \
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
-  -s results_dir
+  -s results_dir\
   -f reference_database_dir
 ```
 
@@ -68,7 +68,7 @@ python SelectFromModel_MultinomialNB.py \
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
-  -s results_dir
+  -s results_dir\
   -f reference_database_dir
 ```
 
@@ -80,7 +80,7 @@ python SelectFromModel_RandomForest.py\
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
-  -s results_dir
+  -s results_dir\
   -f reference_database_dir
 ```
 
@@ -92,7 +92,7 @@ python SelectFromModel_SDG.py\
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
-  -s results_dir
+  -s results_dir\
   -f reference_database_dir
 ```
 
@@ -129,7 +129,7 @@ ipython Evaluate_Method_Accuracy.py\
   -o mock_dir\
   -i min_count\
   -t taxonomy_level_range\
-  -u outdir\
+  -u outdir
 ```
 
 # Conclusion
