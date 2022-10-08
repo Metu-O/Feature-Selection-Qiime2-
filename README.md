@@ -32,7 +32,7 @@ The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a bas
 
 # File paths 
 
-I created the following file paths within the tax-credit-data directory. Experienced users can create their own paths. Otherwise, these paths have been included in all scripts.  
+I created the following file paths to be parsed by argparse. Experienced users can create their own paths. Otherwise, these paths have been included in all scripts.  
 
 ```
 project_dir = expandvars('$HOME/tax-credit-data/')
@@ -101,7 +101,7 @@ Note: running these codes takes hours to run and may require a high computing pr
 
 # File paths 
 
-The files paths used in the code below are different. Again, experienced users can create their own paths. Otherwise, these paths have been included in the Evaluate_method_accuracy.py script.
+The files paths for argparse used in the code below are different. Again, experienced users can create their own paths. Otherwise, these paths have been included in the Evaluate_method_accuracy.py script.
 
 ```
 project_dir = expandvars('$HOME/tax-credit-data/')
