@@ -46,7 +46,8 @@ reference_database_dir = join(project_dir, 'data','ref_dbs')
 ```
 
 # Run codes 
-#ALL CODES MUST BE RUN IN A QIIME2 ENVIRONMENT
+# ALL CODES MUST BE RUN IN A QIIME2 ENVIRONMENT
+
 Run the feature selection python files in the 'Feature-Selection-Qiime2' directory 
 1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters.
 
