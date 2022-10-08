@@ -121,7 +121,7 @@ Compare method accuracy by running Evaluate_method_accuracy.py (follow comments 
 Evaluate_method_accuracy.ipynb is the notebook version of Evaluate_method_accuracy.py, showing all plots and figures. 
 
 ```
-python SelectFromModel_SDG.py\
+ipython Evaluate_method_accuracy.py\
   -r project_dir \
   -e expected_results_dir \
   -m mock_results_fp  \
