@@ -30,6 +30,8 @@ The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a bas
   git clone https://github.com/Metu-O/Feature-Selection-Qiime2
   ```
 
+# File paths 
+
 I created the following file paths within the tax-credit-data directory. Experienced users can create their own paths. Otherwise, these paths have been included in all scripts.  
 
 ```
@@ -96,6 +98,22 @@ python SelectFromModel_SDG.py\
 
 Note: running these codes takes hours to run and may require a high computing processor. Do not wait around.
 
+# File paths 
+
+The files paths used in the code below are different. Again, experienced users can create their own paths. Otherwise, these paths have been included in all scripts.
+
+```
+project_dir = expandvars('$HOME/tax-credit-data/')
+expected_results_dir = join(project_dir, "data/precomputed-results/", "mock-community")
+mock_results_fp = join(expected_results_dir, 'mock_results.tsv')
+results_dirs = [expected_results_dir]
+mock_dir = join(project_dir, "data", "mock-community")
+min_count = 1
+taxonomy_level_range = range(2,7)
+outdir = join(project_dir, "plots")
+if not os.path.exists(outdir):
+ os.makedirs(outdir)
+```
 # Evaluate method accuracy
 
 Compare method accuracy by running Evaluate_method_accuracy.py (follow comments in codes for more information)
