@@ -10,6 +10,7 @@ import csv
 import json
 import tempfile
 import argparse
+import pathlib
 from itertools import product
 from qiime2.plugins import feature_classifier
 from qiime2 import Artifact
