@@ -100,7 +100,7 @@ Note: running these codes takes hours to run and may require a high computing pr
 
 # File paths 
 
-The files paths used in the code below are different. Again, experienced users can create their own paths. Otherwise, these paths have been included in all scripts.
+The files paths used in the code below are different. Again, experienced users can create their own paths. Otherwise, these paths have been included in the Evaluate_method_accuracy.py script.
 
 ```
 project_dir = expandvars('$HOME/tax-credit-data/')
