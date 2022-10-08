@@ -30,9 +30,7 @@ The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a bas
   git clone https://github.com/Metu-O/Feature-Selection-Qiime2
   ```
 
-#File paths 
-
-Experienced users xxx
+I created the following file paths within the tax-credit-data directory. Experienced users can create their own paths. Otherwise, these paths have been included in all scripts.  
 
 ```
 project_dir = expandvars('$HOME/tax-credit-data/')
@@ -49,9 +47,52 @@ reference_database_dir = join(project_dir, 'data','ref_dbs')
 
 Run the feature selection python files in the 'Feature-Selection-Qiime2' directory (follow comments in codes for more information)
 1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters.
-2. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. 
-3. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator. 
-4. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. 
+
+```
+python Naive_Bayes_Parameters.py \
+  -r project_dir \
+  -a analysis_name \
+  -d data_dir \
+  -e precomputed_dir\
+  -s results_dir
+  -f reference_database_dir
+```
+
+3. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. 
+
+```
+python SelectFromModel_MultinomialNB.py \
+  -r project_dir \
+  -a analysis_name \
+  -d data_dir \
+  -e precomputed_dir\
+  -s results_dir
+  -f reference_database_dir
+```
+
+5. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator.
+
+```
+python SelectFromModel_RandomForest.py\
+  -r project_dir \
+  -a analysis_name \
+  -d data_dir \
+  -e precomputed_dir\
+  -s results_dir
+  -f reference_database_dir
+```
+
+7. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. 
+
+```
+python SelectFromModel_SDG.py\
+  -r project_dir \
+  -a analysis_name \
+  -d data_dir \
+  -e precomputed_dir\
+  -s results_dir
+  -f reference_database_dir
+```
 
 Note: running these codes takes hours to run and may require a high computing processor. Do not wait around.
 
