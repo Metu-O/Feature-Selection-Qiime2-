@@ -102,6 +102,18 @@ Compare method accuracy by running Evaluate_method_accuracy.py (follow comments 
 
 Evaluate_method_accuracy.ipynb is the notebook version of Evaluate_method_accuracy.py, showing all plots and figures. 
 
+```
+python SelectFromModel_SDG.py\
+  -r project_dir \
+  -e expected_results_dir \
+  -m mock_results_fp  \
+  -s results_dirs\
+  -o mock_dir\
+  -i min_count\
+  -t taxonomy_level_range\
+  -u outdir\
+```
+
 # Conclusion
 
 Feature-Selection-Qiime2 performed better than regular qiime2 more than 70% of the time. To find out more about the metrics used for comparison, read my thesis (will be cited once published). 
