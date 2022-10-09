@@ -68,26 +68,25 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
                                   group_by="Reference", color_by="Method",
                                   color_palette=color_palette)
     for k, v in point.items():
-        v.savefig(join(outdir, 'mock-{0}-lineplots.pdf'.format(k)))
-
+        v.savefig(join(outdir, 'mock-{0}-lineplots.pdf'.format(k)),bbox_inches = 'tight')
 
     # Heatmaps show the performance of individual method/parameter combinations at each taxonomic level, in each reference database
     heatmap_from_data_frame(mock_results, metric="Precision", rows=["Method", "Parameters"], cols=["Reference","Level"])
-    plt.savefig(join(outdir, "Precision-heatmap.pdf"))
+    plt.savefig(join(outdir, "Precision-heatmap.pdf"), bbox_inches = 'tight')
     
     heatmap_from_data_frame(mock_results, metric="Recall", rows=["Method", "Parameters"], cols=["Reference","Level"])
-    plt.savefig(join(outdir, "Recall-heatmap.pdf"))
+    plt.savefig(join(outdir, "Recall-heatmap.pdf"), bbox_inches = 'tight')
     
     heatmap_from_data_frame(mock_results, metric="F-measure", rows=["Method", "Parameters"], cols=["Reference","Level"])
-    plt.savefig(join(outdir, "F-measure-heatmap.pdf"))
+    plt.savefig(join(outdir, "F-measure-heatmap.pdf"), bbox_inches = 'tight')
     
     heatmap_from_data_frame(mock_results, metric="Taxon Accuracy Rate", rows=["Method", "Parameters"], cols=    
                             ["Reference", "Level"])
-    plt.savefig(join(outdir, "Taxon Accuracy Rate.pdf"))
+    plt.savefig(join(outdir, "Taxon Accuracy Rate.pdf"), bbox_inches = 'tight')
     
     heatmap_from_data_frame(mock_results, metric="Taxon Detection Rate", rows=["Method", "Parameters"], cols=
                             ["Reference", "Level"])
-    plt.savefig(join(outdir, "Taxon Detection Rate-heatmap.pdf"))
+    plt.savefig(join(outdir, "Taxon Detection Rate-heatmap.pdf"), bbox_inches = 'tight')
 
     #Now we will focus on results at species level (for genus level, change to level 5)
     # Method optimization
@@ -100,7 +99,7 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
         #display(Markdown('## {0}'.format(dataset)))
         best = method_by_dataset_a1(mock_results_6, dataset)
         #display(best)
-    best.to_csv(join(outdir, "best_method"))
+        best.to_csv(join(outdir, '{0}-best_method.csv'.format(dataset)),sep='\t')
     
     # Now we can determine which parameter configuration performed best for each method. Count best values in each     #column indicate how many   
     #samples a given method achieved within one mean absolute deviation of the best      
@@ -111,7 +110,7 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
         metrics=['Taxon Accuracy Rate', 'Taxon Detection Rate', 'Precision', 'Recall', 'F-measure'])
         #display(Markdown('## {0}'.format(method)))
         #display(top_params[:5])
-    top_params[:5].to_csv(join(outdir, "top_params"))
+        top_params[:5].to_csv(join(outdir, '{0}-top_params.csv'.format(method)),sep='\t')
         
     
     # Optimized method performance
@@ -122,24 +121,25 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
     #each method, and compared using paired t-tests with FDR-corrected P-values. This cell does not need to be altered, unless if you wish to 
     #change the metric used for sorting best methods and for plotting.
     
-    boxes = rank_optimized_method_performance_by_dataset(mock_results,
-                                                     dataset="Reference",
-                                                     metric="F-measure",
-                                                     level_range=range(4,7),
-                                                     display_fields=["Method",
-                                                                     "Parameters",
-                                                                     "Taxon Accuracy Rate",
-                                                                     "Taxon Detection Rate",
-                                                                     "Precision",
-                                                                     "Recall",
-                                                                     "F-measure"],
-                                                     paired=True,
-                                                     parametric=True,
-                                                     color=None,
-                                                   color_palette=color_palette)
-                                                  
-    for k, v in boxes.items():
-        v.get_figure().savefig(join(outdir, 'mock-fmeasure-{0}-boxplots.pdf'.format(k)))
+    for metric in ["Taxon Accuracy Rate", "Taxon Detection Rate", "Precision", "Recall", "F-measure"]:
+        #display(Markdown('## {0}'.format(metric)))
+        boxes = rank_optimized_method_performance_by_dataset(mock_results,
+                                                         dataset="Reference",
+                                                         metric=metric,
+                                                         level_range=range(6,7),
+                                                         display_fields=["Method",
+                                                                         "Parameters",
+                                                                         "Taxon Accuracy Rate",
+                                                                         "Taxon Detection Rate",
+                                                                         "Precision",
+                                                                         "Recall",
+                                                                         "F-measure"],
+                                                         paired=True,
+                                                         parametric=True,
+                                                         color=None,
+                                                         color_palette=color_palette)
+        for k, v in boxes.items():
+            v.get_figure().savefig(join(outdir, 'mock-{0}-{1}-boxplots.pdf'.format(metric, k)), bbox_inches = 'tight')
 
 def main():
     parser = argparse.ArgumentParser(
