@@ -51,14 +51,12 @@ python SelectFromModel_SDG.py\
   -s results_dir\
   -f reference_database_dir
   
-ipython Evaluate_Method_Accuracy.py\
+python Evaluate_Method_Accuracy.py\
   -r project_dir \
   -e expected_results_dir \
   -m mock_results_fp  \
   -s results_dirs\
   -o mock_dir\
-  -i min_count\
-  -t taxonomy_level_range\
   -u outdir
   
 format_time() {
