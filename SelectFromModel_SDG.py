@@ -188,6 +188,15 @@ def  main_wrapper_function(project_dir,analysis_name,data_dir,precomputed_dir,re
     # Now fit the pipelines.
     pipelines = {'q2-SFM-SDG': build_pipeline(
                  MultinomialNB, hash_params, feat_sel_params, classify_params)}
+                 
+    # Do the Sweep
+    sweep = gen_param_sweep(data_dir, results_dir, reference_dbs,
+                        dataset_reference_combinations,
+                        method_parameters_combinations)
+    sweep = list(sweep)
+    # A quick sanity check 
+    print(len(sweep))
+    sweep[0]
     
     train_and_run_classifier(method_parameters_combinations, reference_dbs, pipelines, sweep, verbose=True,n_jobs=1)
     # Generate per-method biom tables. 
