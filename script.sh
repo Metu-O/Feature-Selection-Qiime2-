@@ -5,7 +5,13 @@
 #SBATCH --output=metu_trial.out
 #SBATCH --time=60:00:00
 
-
+format_time() {
+  ((h=${1}/3600))
+  ((m=(${1}%3600)/60))
+  ((s=${1}%60))
+  printf "%02d:%02d:%02d\n" $h $m $s
+ }
+ 
 source /opt/conda/etc/profile.d/conda.sh
 conda activate /home/SE/BMIG-6202-MSR/qiime2-2022.2
 
@@ -27,6 +33,8 @@ python Naive_Bayes_Parameters.py \
   -s results_dir\
   -f reference_database_dir
   
+echo "Naive_Bayes_Parameters.py script completed in $(format_time $SECONDS)"
+
 python SelectFromModel_MultinomialNB.py \
   -r project_dir \
   -a analysis_name \
@@ -34,7 +42,9 @@ python SelectFromModel_MultinomialNB.py \
   -e precomputed_dir\
   -s results_dir\
   -f reference_database_dir
-  
+ 
+echo "SelectFromModel_MultinomialNB.py script completed in $(format_time $SECONDS)"
+
 python SelectFromModel_RandomForest.py\
   -r project_dir \
   -a analysis_name \
@@ -42,7 +52,9 @@ python SelectFromModel_RandomForest.py\
   -e precomputed_dir\
   -s results_dir\
   -f reference_database_dir
-  
+
+echo "SelectFromModel_RandomForest.py script completed in $(format_time $SECONDS)"
+
 python SelectFromModel_SDG.py\
   -r project_dir \
   -a analysis_name \
@@ -51,6 +63,8 @@ python SelectFromModel_SDG.py\
   -s results_dir\
   -f reference_database_dir
   
+echo "SelectFromModel_SDG.py script completed in $(format_time $SECONDS)"
+ 
 python Evaluate_Method_Accuracy.py\
   -r project_dir \
   -e expected_results_dir \
@@ -58,12 +72,8 @@ python Evaluate_Method_Accuracy.py\
   -s results_dirs\
   -o mock_dir\
   -u outdir
-  
-format_time() {
-  ((h=${1}/3600))
-  ((m=(${1}%3600)/60))
-  ((s=${1}%60))
-  printf "%02d:%02d:%02d\n" $h $m $s
- }
  
-echo "Script completed in $(format_time $SECONDS)"
+ echo "Evaluate_Method_Accuracy.py script completed in $(format_time $SECONDS)"
+ echo "I'm Done"
+ 
+
