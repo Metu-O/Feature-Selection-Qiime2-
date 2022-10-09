@@ -129,6 +129,10 @@ python Evaluate_Method_Accuracy.py\
   -u outdir
 ```
 
+# Bash Script 
+
+The bash script was personalized to my personal environments and filepaths. Edit before use.
+
 # Conclusion
 
 Feature-Selection-Qiime2 performed better than regular qiime2 more than 70% of the time. To find out more about the metrics used for comparison, read my thesis (will be cited once published). 
