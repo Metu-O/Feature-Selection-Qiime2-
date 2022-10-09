@@ -1,13 +1,15 @@
 # Run this code in the qiime2-2022.2 environment.
 
 # Import modules and packages
-get_ipython().run_line_magic('matplotlib', 'inline')
+#get_ipython().run_line_magic('matplotlib', 'inline')
 import os
 from os.path import join, exists, expandvars
 import pandas as pd
-from IPython.display import display, Markdown
+import matplotlib.pyplot as plt
+#from IPython.display import display, Markdown
 import seaborn
 import argparse
+import pathlib
 from tax_credit.plotting_functions import (pointplot_from_data_frame,
                                            boxplot_from_data_frame,
                                            heatmap_from_data_frame,
@@ -21,15 +23,13 @@ from tax_credit.eval_framework import (evaluate_results,
                                        merge_expected_and_observed_tables,
                                        filter_df)
 
-def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,results_dirs,mock_dir,min_count,taxonomy_level_range,outdir):
+def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,results_dirs,mock_dir,outdir):
 #Experienced users can create their own path.  
     project_dir = expandvars('$HOME/tax-credit-data/')
     expected_results_dir = join(project_dir, "data/precomputed-results/", "mock-community")
     mock_results_fp = join(expected_results_dir, 'mock_results.tsv')
     results_dirs = [expected_results_dir]
     mock_dir = join(project_dir, "data", "mock-community")
-    min_count = 1
-    taxonomy_level_range = range(2,7)
     outdir = join(project_dir, "plots")
     if not os.path.exists(outdir):
         os.makedirs(outdir)
@@ -43,8 +43,8 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
                                 expected_results_dir, 
                                 mock_results_fp, 
                                 mock_dir,
-                                taxonomy_level_range=range(2,7), 
-                                min_count=min_count,
+                                taxonomy_level_range=range(2,7), #Define the range of taxonomic levels over which to compute accuracy scores. The                                   default will compute order (level 2) through species (level 6)
+                                min_count=1, #Minimum number of times an OTU must be observed for it to be included in analyses. Edit this to analyze the effect of the minimum count on taxonomic results.'
                                 taxa_to_keep=None, 
                                 md_key='taxonomy', 
                                 subsample=False,
@@ -54,7 +54,7 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
                                 reference_ids=ref_ids,
                                 method_ids=method_ids,
                                 append=False,
-                                force=False, #force=True the first time 
+                                force=True, #force=True the first time 
                                 backup=False)
     #Compute and summarize precision, recall, and F-measure for mock communities
     color_palette={ 
@@ -73,22 +73,21 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
 
     # Heatmaps show the performance of individual method/parameter combinations at each taxonomic level, in each reference database
     heatmap_from_data_frame(mock_results, metric="Precision", rows=["Method", "Parameters"], cols=["Reference","Level"])
-    plt = plt.figure(figsize=(24, 8))
-    plt.savefig(join(outdir, "Precision-heatmap")
+    plt.savefig(join(outdir, "Precision-heatmap.pdf"))
+    
     heatmap_from_data_frame(mock_results, metric="Recall", rows=["Method", "Parameters"], cols=["Reference","Level"])
-    plt = plt.figure(figsize=(24, 8))
-    plt.savefig(join(outdir, "Recall-heatmap")
+    plt.savefig(join(outdir, "Recall-heatmap.pdf"))
+    
     heatmap_from_data_frame(mock_results, metric="F-measure", rows=["Method", "Parameters"], cols=["Reference","Level"])
-    plt = plt.figure(figsize=(24, 8))
-    plt.savefig(join(outdir, "F-measure-heatmap")
+    plt.savefig(join(outdir, "F-measure-heatmap.pdf"))
+    
     heatmap_from_data_frame(mock_results, metric="Taxon Accuracy Rate", rows=["Method", "Parameters"], cols=    
                             ["Reference", "Level"])
-    plt = plt.figure(figsize=(24, 8))
-    plt.savefig(join(outdir, "Taxon Accuracy Rate")
+    plt.savefig(join(outdir, "Taxon Accuracy Rate.pdf"))
+    
     heatmap_from_data_frame(mock_results, metric="Taxon Detection Rate", rows=["Method", "Parameters"], cols=
                             ["Reference", "Level"])
-    plt = plt.figure(figsize=(24, 8))
-    plt.savefig(join(outdir, "Taxon Detection Rate-heatmap")
+    plt.savefig(join(outdir, "Taxon Detection Rate-heatmap.pdf"))
 
     #Now we will focus on results at species level (for genus level, change to level 5)
     # Method optimization
@@ -96,13 +95,12 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
     #and taxonomic level. 
     # First, the top-performing method/configuration combination by dataset.
     mock_results_6 = mock_results[mock_results['Level'] == 6]
-    pd.set_option('display.max_colwidth', None)
+    #pd.set_option('display.max_colwidth', None)
     for dataset in mock_results_6['Dataset'].unique():
-        display(Markdown('## {0}'.format(dataset)))
+        #display(Markdown('## {0}'.format(dataset)))
         best = method_by_dataset_a1(mock_results_6, dataset)
-        display(best)
-        plt = plt.figure(figsize=(24, 8))
-        plt.savefig(join(outdir, "best_method")
+        #display(best)
+    best.to_csv(join(outdir, "best_method"))
     
     # Now we can determine which parameter configuration performed best for each method. Count best values in each     #column indicate how many   
     #samples a given method achieved within one mean absolute deviation of the best      
@@ -111,11 +109,10 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
         top_params = parameter_comparisons(
         mock_results_6, method, 
         metrics=['Taxon Accuracy Rate', 'Taxon Detection Rate', 'Precision', 'Recall', 'F-measure'])
-        display(Markdown('## {0}'.format(method)))
-        display(top_params[:5])
-        plt = plt.figure(figsize=(24, 8))
-        plt.savefig(join(outdir, "top_params")
-    
+        #display(Markdown('## {0}'.format(method)))
+        #display(top_params[:5])
+    top_params[:5].to_csv(join(outdir, "top_params"))
+        
     
     # Optimized method performance
     # And, finally, which method performed best at each individual taxonomic level for each reference dataset (i.e., for across all fungal and
@@ -139,31 +136,28 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
                                                      paired=True,
                                                      parametric=True,
                                                      color=None,
-                                                     color_palette=color_palette)
+                                                   color_palette=color_palette)
+                                                  
     for k, v in boxes.items():
-    v.get_figure().savefig(join(outdir, 'mock-fmeasure-{0}-boxplots.pdf'.format(k)))
+        v.get_figure().savefig(join(outdir, 'mock-fmeasure-{0}-boxplots.pdf'.format(k)))
 
 def main():
     parser = argparse.ArgumentParser(
             description= 'The tax-credit-data directorsy contains all data used to prepare these codes. I am                   argparse to soft code important file paths needed to run this script. Experienced users can create                 their own paths')
 
     req = parser.add_argument_group('REQUIRED')
-    req.add_argument('-r', '--project_dir', required=True, action='store',
+    req.add_argument('-r', '--project_dir', required=True, action='store',type=pathlib.Path,
              help='Project_dir should be tax-credit-data directory')
-    req.add_argument('-e', '--expected_results_dir', required=True, action='store',
+    req.add_argument('-e', '--expected_results_dir', required=True, action='store',type=pathlib.Path,
              help='expected_results_dir contains expected composition                                                                data in the structure expected_results_dir/<dataset name>/<reference name>/expected/')
-    req.add_argument('-m', '--mock_results_fp', required=True, action='store',
-             type=int, help='mock_results_fp designates the files to which summary results are written. If this                file exists, it can be read in to generate results plots, instead of computing new scores.')
-    req.add_argument('-s', '--results_dirs', required=True, action='store',
-             type=int, help='results_dirs should contain the directory or directories where results can be found.                              By default, this is the same location as expected results included with the project.                              If other results should be included, absolute paths to those directories should be                                added to this list.')
-    req.add_argument('-o', '--mock_dir', required=True, action='store',
-             type=int, help='directory containing mock community data, e.g., feature table without taxonomy')
-    req.add_argument('-i', '--min_count', required=True, action='store',
-             type=int, help='Minimum number of times an OTU must be observed for it to be included in analyses.                                Edit this to analyze the effect of the minimum count on taxonomic results.')
-    req.add_argument('-t', '--taxonomy_level_range', required=True, action='store',
-             type=int, help='Define the range of taxonomic levels over which to compute accuracy scores. The                                   default given below will compute order (level 2) through species (level 6)')
-    req.add_argument('-u', '--outdir', required=True, action='store',
-             type=int, help='you can save plots in this directory')
+    req.add_argument('-m', '--mock_results_fp', required=True, action='store',type=pathlib.Path,
+             help='mock_results_fp designates the files to which summary results are written. If this                file exists, it can be read in to generate results plots, instead of computing new scores.')
+    req.add_argument('-s', '--results_dirs', required=True, action='store',type=pathlib.Path,
+             help='results_dirs should contain the directory or directories where results can be found.                              By default, this is the same location as expected results included with the project.                              If other results should be included, absolute paths to those directories should be                                added to this list.')
+    req.add_argument('-o', '--mock_dir', required=True, action='store',type=pathlib.Path,
+             help='directory containing mock community data, e.g., feature table without taxonomy')
+    req.add_argument('-u', '--outdir', required=True, action='store',type=pathlib.Path,
+             help='you can save plots in this directory')
     
     
     p = parser.parse_args()
@@ -172,11 +166,9 @@ def main():
     mock_results_fp  = p.mock_results_fp 
     results_dirs =p.results_dirs
     mock_dir = p.mock_dir
-    min_count = p.min_count
-    taxonomy_level_range = p.taxonomy_level_range
     outdir = p.outdir
     
-    evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,results_dirs,mock_dir,min_count,taxonomy_level_range,outdir)
+    evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,results_dirs,mock_dir,outdir)
 
 if __name__ == '__main__':
         main()
