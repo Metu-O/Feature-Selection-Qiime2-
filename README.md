@@ -109,8 +109,6 @@ expected_results_dir = join(project_dir, "data/precomputed-results/", "mock-comm
 mock_results_fp = join(expected_results_dir, 'mock_results.tsv')
 results_dirs = [expected_results_dir]
 mock_dir = join(project_dir, "data", "mock-community")
-min_count = 1
-taxonomy_level_range = range(2,7)
 outdir = join(project_dir, "plots")
 if not os.path.exists(outdir):
  os.makedirs(outdir)
@@ -122,14 +120,12 @@ Compare method accuracy by running Evaluate_method_accuracy.py (follow comments 
 Evaluate_method_accuracy.ipynb is the notebook version of Evaluate_method_accuracy.py, showing all plots and figures. 
 
 ```
-ipython Evaluate_Method_Accuracy.py\
+python Evaluate_Method_Accuracy.py\
   -r project_dir \
   -e expected_results_dir \
   -m mock_results_fp  \
   -s results_dirs\
   -o mock_dir\
-  -i min_count\
-  -t taxonomy_level_range\
   -u outdir
 ```
 
