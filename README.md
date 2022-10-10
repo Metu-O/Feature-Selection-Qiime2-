@@ -35,7 +35,7 @@ The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a bas
 I created the following file paths to be parsed by argparse. Experienced users can create their own paths. Otherwise, these paths have been included in all scripts.  
 
 ```
-project_dir = expandvars('$HOME/tax-credit-data/')
+project_dir = 'tax-credit-data'
 analysis_name = 'mock-community'
 data_dir = join(project_dir, 'data', analysis_name)
 precomputed_dir = join(project_dir, 'data', 'precomputed-results', analysis_name)
@@ -104,7 +104,7 @@ Note: running these codes takes hours to run and may require a high computing pr
 The files paths for argparse used in the code below are different. Again, experienced users can create their own paths. Otherwise, these paths have been included in the Evaluate_method_accuracy.py script.
 
 ```
-project_dir = expandvars('$HOME/tax-credit-data/')
+project_dir = 'tax-credit-data'
 expected_results_dir = join(project_dir, "data/precomputed-results/", "mock-community")
 mock_results_fp = join(expected_results_dir, 'mock_results.tsv')
 results_dirs = [expected_results_dir]
