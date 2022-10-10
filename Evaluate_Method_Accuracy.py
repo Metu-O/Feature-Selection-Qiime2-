@@ -99,7 +99,7 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
         #display(Markdown('## {0}'.format(dataset)))
         best = method_by_dataset_a1(mock_results_6, dataset)
         #display(best)
-        best.to_csv(join(outdir, '{0}-best_method.csv'.format(dataset)),sep='\t')
+        best.to_csv(join(outdir, '{0}-best_method.tsv'.format(dataset)),sep='\t')
     
     # Now we can determine which parameter configuration performed best for each method. Count best values in each     #column indicate how many   
     #samples a given method achieved within one mean absolute deviation of the best      
@@ -110,7 +110,7 @@ def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,r
         metrics=['Taxon Accuracy Rate', 'Taxon Detection Rate', 'Precision', 'Recall', 'F-measure'])
         #display(Markdown('## {0}'.format(method)))
         #display(top_params[:5])
-        top_params[:5].to_csv(join(outdir, '{0}-top_params.csv'.format(method)),sep='\t')
+        top_params[:5].to_csv(join(outdir, '{0}-top_params.tsv'.format(method)),sep='\t')
         
     
     # Optimized method performance
