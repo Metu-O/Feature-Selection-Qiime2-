@@ -2,7 +2,7 @@
 
 # Import modules and packages
 import os
-from os.path import join, exists, split, sep, expandvars 
+from os.path import join, exists, split, sep
 from os import makedirs, getpid
 from glob import glob
 from shutil import rmtree
@@ -126,7 +126,7 @@ def build_pipeline(classifier, hash_params, feat_sel_params, classify_params):
 
 def  main_wrapper_function(project_dir,analysis_name,data_dir,precomputed_dir,results_dir,reference_database_dir):
     #Experienced users can create their own path.  
-    project_dir = expandvars('$HOME/tax-credit-data/')
+    project_dir = 'tax-credit-data'
     analysis_name = 'mock-community'
     data_dir = join(project_dir, 'data', analysis_name)
     precomputed_dir = join(project_dir, 'data', 'precomputed-results', analysis_name)
