@@ -6,7 +6,7 @@
 #SBATCH --time=60:00:00
  
 source /opt/conda/etc/profile.d/conda.sh
-conda activate /home/SE/BMIG-6202-MSR/qiime2-2022.2
+conda activate /home/SE/BMIG-6202-MSR/qiime2-2022.2 #change to the environment where qiime2 is downloaded.
 
 wd="/scratch/metu/input/" #temporary working directory. Change to your own path.
 if [ ! -d "$wd" ]; then
