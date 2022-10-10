@@ -3,7 +3,7 @@
 # Import modules and packages
 #get_ipython().run_line_magic('matplotlib', 'inline')
 import os
-from os.path import join, exists, expandvars
+from os.path import join, exists
 import pandas as pd
 import matplotlib.pyplot as plt
 #from IPython.display import display, Markdown
@@ -25,7 +25,7 @@ from tax_credit.eval_framework import (evaluate_results,
 
 def evaluate_method_accuracy(project_dir,expected_results_dir, mock_results_fp,results_dirs,mock_dir,outdir):
 #Experienced users can create their own path.  
-    project_dir = expandvars('$HOME/tax-credit-data/')
+    project_dir = 'tax-credit-data'
     expected_results_dir = join(project_dir, "data/precomputed-results/", "mock-community")
     mock_results_fp = join(expected_results_dir, 'mock_results.tsv')
     results_dirs = [expected_results_dir]
