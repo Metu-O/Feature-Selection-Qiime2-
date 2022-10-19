@@ -34,7 +34,7 @@ format_time() {
  }
 
 python Naive_Bayes_Parameters.py \
-  -r project_dir \
+  -t tax_credit_data_path \
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
@@ -44,7 +44,7 @@ python Naive_Bayes_Parameters.py \
 echo "Naive_Bayes_Parameters.py script completed after $(format_time $SECONDS)"
 
 python SelectFromModel_MultinomialNB.py \
-  -r project_dir \
+  -t tax_credit_data_path \
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
@@ -54,7 +54,7 @@ python SelectFromModel_MultinomialNB.py \
 echo "SelectFromModel_MultinomialNB.py script completed after $(format_time $SECONDS)"
 
 python SelectFromModel_RandomForest.py\
-  -r project_dir \
+  -t tax_credit_data_path \
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
@@ -64,7 +64,7 @@ python SelectFromModel_RandomForest.py\
 echo "SelectFromModel_RandomForest.py script completed after $(format_time $SECONDS)"
 
 python SelectFromModel_SDG.py\
-  -r project_dir \
+  -t tax_credit_data_path \
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
@@ -74,7 +74,7 @@ python SelectFromModel_SDG.py\
 echo "SelectFromModel_SDG.py script completed after $(format_time $SECONDS)"
  
 python Evaluate_Method_Accuracy.py\
-  -r project_dir \
+  -t tax_credit_data_path \
   -e expected_results_dir \
   -m mock_results_fp  \
   -s results_dirs\
