@@ -32,10 +32,10 @@ The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a bas
 
 # File paths 
 
-I created the following file paths to be parsed by argparse. Experienced users can create their own paths. Otherwise, these paths have been included in all scripts.  
+I created the following file paths to be parsed by argparse. Experienced users can create their own paths. Otherwise, these defaults can be used.   
 
 ```
-project_dir = 'tax-credit-data'
+tax_credit_data_path = 'tax-credit-data'
 analysis_name = 'mock-community'
 data_dir = join(project_dir, 'data', analysis_name)
 precomputed_dir = join(project_dir, 'data', 'precomputed-results', analysis_name)
@@ -53,7 +53,7 @@ Run the feature selection python files in the 'Feature-Selection-Qiime2' directo
 
 ```
 python Naive_Bayes_Parameters.py \
-  -r project_dir \
+  -t tax_credit_data_path \
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
@@ -65,7 +65,7 @@ python Naive_Bayes_Parameters.py \
 
 ```
 python SelectFromModel_MultinomialNB.py \
-  -r project_dir \
+  -t tax_credit_data_path \
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
@@ -77,7 +77,7 @@ python SelectFromModel_MultinomialNB.py \
 
 ```
 python SelectFromModel_RandomForest.py\
-  -r project_dir \
+  -t tax_credit_data_path \
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
@@ -89,7 +89,7 @@ python SelectFromModel_RandomForest.py\
 
 ```
 python SelectFromModel_SDG.py\
-  -r project_dir \
+  -t tax_credit_data_path \
   -a analysis_name \
   -d data_dir \
   -e precomputed_dir\
@@ -104,7 +104,7 @@ Note: running these codes takes hours to run and may require a high computing pr
 The files paths for argparse used in the code below are different. Again, experienced users can create their own paths. Otherwise, these paths have been included in the Evaluate_method_accuracy.py script.
 
 ```
-project_dir = 'tax-credit-data'
+tax_credit_data_path = 'tax-credit-data'
 expected_results_dir = join(project_dir, "data/precomputed-results/", "mock-community")
 mock_results_fp = join(expected_results_dir, 'mock_results.tsv')
 results_dirs = [expected_results_dir]
@@ -121,7 +121,7 @@ Evaluate_method_accuracy.ipynb is the notebook version of Evaluate_method_accura
 
 ```
 python Evaluate_Method_Accuracy.py\
-  -r project_dir \
+  -t tax_credit_data_path \
   -e expected_results_dir \
   -m mock_results_fp  \
   -s results_dirs\
