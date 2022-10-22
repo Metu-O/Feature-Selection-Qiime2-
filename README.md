@@ -82,7 +82,7 @@ Run script with user input
 ```
 python SelectFromModel_RandomForest.py \
    -t 'your own tax-credit-data path' \
-   -n 'reference database name'\
+   -n 'reference database name e.g greengenes or SILVA'\
    -s 'path to reference sequences'\
    -f 'path to reference taxonomy'
 ```
