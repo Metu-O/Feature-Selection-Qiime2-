@@ -105,13 +105,9 @@ python SelectFromModel_SDG.py \
    -t 'path to reference taxonomy' 
 ```
 
-Note: running these codes takes hours to run and may require a high computing processor. Do not wait around.
+Compare method accuracy by running Evaluate_method_accuracy.py
 
-# Evaluate method accuracy
-
-Compare method accuracy by running Evaluate_method_accuracy.py (follow comments in codes for more information)
-
-Evaluate_method_accuracy.ipynb is the notebook version of Evaluate_method_accuracy.py, showing all plots and figures. 
+NOTE: Evaluate_method_accuracy.ipynb is the notebook version of Evaluate_method_accuracy.py, showing all plots and figures. 
 
 Run "help" to see usage.
 ```
@@ -126,6 +122,8 @@ Run script with user input
 python Evaluate_Method_Accuracy.py \
    -p 'save plots in this directory 
 ```
+
+Note: running these codes takes hours to run and may require a high computing processor. Do not wait around.
 
 # Bash Script runs all codes 
 
