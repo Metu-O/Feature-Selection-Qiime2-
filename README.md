@@ -40,16 +40,22 @@ The sklearn stochastic gradient descent (SGD) classifier was used as a base esti
 
 # Command lines
 
-1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters. Naive_Bayes_Parameters.py allows user to run codes with defaults or user input. I strongly advise using defaults except you are adept with directories. Run "help" to see usage.
+1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters. Naive_Bayes_Parameters.py allows user to run codes with defaults or user input. I strongly advise using defaults except you are adept with directories. Run "help" to see usage and defaults .
 ```
 python Naive_Bayes_Parameters.py -h
 ```
-Run script with defaults 
+Example: 
+
+
+
+
+
+Run script below to use defaults
 
 ```
 python Naive_Bayes_Parameters.py 
 ```
-Run script with user input 
+Run script below with to change defaults with user input 
 ```
 python Naive_Bayes_Parameters.py \
    -n 'reference database name'\
@@ -69,11 +75,11 @@ python Naive_Bayes_Parameters.py \
 ```
 python SelectFromModel_MultinomialNB.py -h
 ```
-Run script with defaults
+Run script below to use defaults
 ```
 python SelectFromModel_MultinomialNB.py 
 ```
-Run script with user input 
+Run script below with to change defaults with user input
 ```
 python SelectFromModel_MultinomialNB.py \
    -n 'reference database name'\
@@ -85,11 +91,11 @@ python SelectFromModel_MultinomialNB.py \
 ```
 python SelectFromModel_RandomForest.py -h
 ```
-Run script with defaults
+Run script below to use defaults
 ```
 python SelectFromModel_RandomForest.py
 ```
-Run script with user input
+Run script below with to change defaults with user input
 ```
 python SelectFromModel_RandomForest.py \
    -n 'reference database name e.g greengenes or SILVA'\
@@ -101,11 +107,11 @@ python SelectFromModel_RandomForest.py \
 ```
 python SelectFromModel_SDG.py -h
 ```
-Run script with defaults
+Run script below to use defaults
 ```
 python SelectFromModel_SDG.py
 ```
-Run script with user input
+Run script below with to change defaults with user input
 ```
 python SelectFromModel_SDG.py \
    -n 'reference database name'\
@@ -121,17 +127,17 @@ Run "help" to see usage.
 ```
 python Evaluate_Method_Accuracy.py -h
 ```
-Run script with defaults
+Run script below to use defaults
 ```
 python Evaluate_Method_Accuracy.py
 ```
-Run script with user input
+Run script below with to change defaults with user input
 ```
 python Evaluate_Method_Accuracy.py \
    -p 'save plots in this directory 
 ```
 
-Note: running these codes takes hours to run and may require a high computing processor. Do not wait around.
+Note: running these codes takes hours and may require a high computing processor. Do not wait around.
 
 # Bash Script runs all codes 
 
