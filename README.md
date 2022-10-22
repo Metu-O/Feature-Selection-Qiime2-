@@ -30,99 +30,73 @@ The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a bas
   git clone https://github.com/Metu-O/Feature-Selection-Qiime2
   ```
 
-# File paths 
-
-I created the following file paths to be parsed by argparse. Experienced users can create their own paths. Otherwise, these defaults can be used.   
-
-```
-tax_credit_data_path = 'tax-credit-data'
-analysis_name = 'mock-community'
-data_dir = join(project_dir, 'data', analysis_name)
-precomputed_dir = join(project_dir, 'data', 'precomputed-results', analysis_name)
-results_dir = join(project_dir, 'temp_results_narrow')
-if not os.path.exists(results_dir):
- os.makedirs(results_dir)
-reference_database_dir = join(project_dir, 'data','ref_dbs')
-```
-
 # Run codes 
-# ALL CODES MUST BE RUN IN A QIIME2 ENVIRONMENT (see [link](https://docs.qiime2.org/2022.8/install/) on how to install the QIIME 2 Core 2022.8 distribution).
+# ALL CODES MUST BE RUN IN A QIIME2 ENVIRONMENT (see this [link](https://docs.qiime2.org/2022.8/install/) on how to install the QIIME 2 Core 2022.8 distribution).
 
 Run the feature selection python files in the 'Feature-Selection-Qiime2' directory 
-1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters. Naive_Bayes_Parameters.py allows user to run codes with defaults or user input. I strongly advise using defaults except you are adept with directories. Run "help" to see usage.
 
+1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters. Naive_Bayes_Parameters.py allows user to run codes with defaults or user input. I strongly advise using defaults except you are adept with directories. Run "help" to see usage.
 ```
 python Naive_Bayes_Parameters.py -h
-
 ```
-
 Run script with defaults 
 
 ```
 python Naive_Bayes_Parameters.py 
 ```
-
 Run script with user input 
-
 ```
 python Naive_Bayes_Parameters.py \
     --tax_credit_data_path="your own tax-credit-data path" \
     --reference_database="you own reference_database dict" 
 ```
   
-
-3. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. 
-
+2. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. Run "help" to see usage.
+```
+python SelectFromModel_MultinomialNB.py -h
+```
+Run script with defaults
+```
+python SelectFromModel_MultinomialNB.py 
+```
+Run script with user input 
 ```
 python SelectFromModel_MultinomialNB.py \
-  -t tax_credit_data_path \
-  -a analysis_name \
-  -d data_dir \
-  -e precomputed_dir\
-  -s results_dir\
-  -f reference_database_dir
+  --tax_credit_data_path="your own tax-credit-data path" \
+  --reference_database="you own reference_database dict" 
 ```
 
-5. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator.
-
+3. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator. Run "help" to see usage.
 ```
+python SelectFromModel_RandomForest.py -h
+```
+Run script with defaults
+```
+python SelectFromModel_RandomForest.py
+```
+Run script with user input
 python SelectFromModel_RandomForest.py\
-  -t tax_credit_data_path \
-  -a analysis_name \
-  -d data_dir \
-  -e precomputed_dir\
-  -s results_dir\
-  -f reference_database_dir
+  --tax_credit_data_path="your own tax-credit-data path" \
+   --reference_database="you own reference_database dict" 
 ```
 
-7. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. 
-
+7. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. Run "help" to see usage.
+```
+python SelectFromModel_SDG.py -h
+```
+Run script with defaults
+```
+python SelectFromModel_SDG.py
+```
+Run script with user input
 ```
 python SelectFromModel_SDG.py\
-  -t tax_credit_data_path \
-  -a analysis_name \
-  -d data_dir \
-  -e precomputed_dir\
-  -s results_dir\
-  -f reference_database_dir
+  --tax_credit_data_path="your own tax-credit-data path" \
+  --reference_database="you own reference_database dict" 
 ```
 
 Note: running these codes takes hours to run and may require a high computing processor. Do not wait around.
 
-# File paths 
-
-The files paths for argparse used in the code below are different. Again, experienced users can create their own paths. Otherwise, these paths have been included in the Evaluate_method_accuracy.py script.
-
-```
-tax_credit_data_path = 'tax-credit-data'
-expected_results_dir = join(project_dir, "data/precomputed-results/", "mock-community")
-mock_results_fp = join(expected_results_dir, 'mock_results.tsv')
-results_dirs = [expected_results_dir]
-mock_dir = join(project_dir, "data", "mock-community")
-outdir = join(project_dir, "plots")
-if not os.path.exists(outdir):
- os.makedirs(outdir)
-```
 # Evaluate method accuracy
 
 Compare method accuracy by running Evaluate_method_accuracy.py (follow comments in codes for more information)
