@@ -31,6 +31,7 @@ The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a bas
   ```
 
 3. Activate Qiime2 environment
+   
    (see this [link](https://docs.qiime2.org/2022.8/install/) on how to install the QIIME 2 Core 2022.8 distribution)
 
 4. Run codes 
