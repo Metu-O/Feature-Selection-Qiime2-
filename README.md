@@ -81,7 +81,7 @@ python SelectFromModel_RandomForest.py\
    --reference_database="you own reference_database dict" 
 ```
 
-7. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. Run "help" to see usage.
+4. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. Run "help" to see usage.
 ```
 python SelectFromModel_SDG.py -h
 ```
