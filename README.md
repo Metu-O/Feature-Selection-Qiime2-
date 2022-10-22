@@ -18,13 +18,7 @@ The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a bas
 
 # Initializing 
 
-1. Clone tax-credit-data
-
- ```
-  git clone https://github.com/Metu-O/tax-credit-data
-  ```
-  
-2. Clone Feature-Selection-Qiime2
+1. Clone Feature-Selection-Qiime2
 
   ```
   git clone https://github.com/Metu-O/Feature-Selection-Qiime2
