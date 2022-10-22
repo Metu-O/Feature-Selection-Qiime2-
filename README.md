@@ -46,20 +46,30 @@ reference_database_dir = join(project_dir, 'data','ref_dbs')
 ```
 
 # Run codes 
-# ALL CODES MUST BE RUN IN A QIIME2 ENVIRONMENT
+# ALL CODES MUST BE RUN IN A QIIME2 ENVIRONMENT (see [link](https://docs.qiime2.org/2022.8/install/) on how to install the QIIME 2 Core 2022.8 distribution).
 
 Run the feature selection python files in the 'Feature-Selection-Qiime2' directory 
-1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters.
+1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters. Naive_Bayes_Parameters.py allows user to run codes with defaults or user input. I strongly advise using defaults except you are adept with directories. Run "help" to see usage.
+
+```
+python Naive_Bayes_Parameters.py -h
+
+```
+
+Run script with defaults 
+
+```
+python Naive_Bayes_Parameters.py 
+```
+
+Run script with user input 
 
 ```
 python Naive_Bayes_Parameters.py \
-  -t tax_credit_data_path \
-  -a analysis_name \
-  -d data_dir \
-  -e precomputed_dir\
-  -s results_dir\
-  -f reference_database_dir
+    --tax_credit_data_path="your own tax-credit-data path" \
+    --reference_database="you own reference_database dict" 
 ```
+  
 
 3. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. 
 
