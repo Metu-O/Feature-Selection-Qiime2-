@@ -46,8 +46,8 @@ python Naive_Bayes_Parameters.py
 ```
 Run script with user input 
 ```
-python Naive_Bayes_Parameters.py \
-    --tax_credit_data_path="your own tax-credit-data path" \
+python Naive_Bayes_Parameters.py
+    --tax_credit_data_path="your own tax-credit-data path"
     --reference_database="you own reference_database dict" 
 ```
   
@@ -61,8 +61,8 @@ python SelectFromModel_MultinomialNB.py
 ```
 Run script with user input 
 ```
-python SelectFromModel_MultinomialNB.py \
-  --tax_credit_data_path="your own tax-credit-data path" \
+python SelectFromModel_MultinomialNB.py
+  --tax_credit_data_path="your own tax-credit-data path"
   --reference_database="you own reference_database dict" 
 ```
 
@@ -76,8 +76,8 @@ python SelectFromModel_RandomForest.py
 ```
 Run script with user input
 ```
-python SelectFromModel_RandomForest.py\
-  --tax_credit_data_path="your own tax-credit-data path" \
+python SelectFromModel_RandomForest.py
+  --tax_credit_data_path="your own tax-credit-data path"
    --reference_database="you own reference_database dict" 
 ```
 
@@ -91,8 +91,8 @@ python SelectFromModel_SDG.py
 ```
 Run script with user input
 ```
-python SelectFromModel_SDG.py\
-  --tax_credit_data_path="your own tax-credit-data path" \
+python SelectFromModel_SDG.py
+  --tax_credit_data_path="your own tax-credit-data path"
   --reference_database="you own reference_database dict" 
 ```
 
@@ -114,8 +114,8 @@ python Evaluate_Method_Accuracy.py
 ```
 Run script with user input
 ```
-python Evaluate_Method_Accuracy.py\
-  --tax_credit_data_path="your own tax-credit-data path" \
+python Evaluate_Method_Accuracy.py
+  --tax_credit_data_path="your own tax-credit-data path"
   --plots_path="you own path where you would like to save plots" 
 ```
 
