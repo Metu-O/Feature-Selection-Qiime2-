@@ -24,7 +24,7 @@ The sklearn stochastic gradient descent (SGD) classifier was used as a base esti
   git clone https://github.com/Metu-O/Feature-Selection-Qiime2
   ```
   
-2. Change directory to the Feature-Selection-Qiime2 you just cloned
+2. Change directory to the Feature-Selection-Qiime2 you just cloned. Change to your own directory e.g. /home/mosele/Feature-Selection-Qiime2
 
   ```
   cd Feature-Selection-Qiime2
