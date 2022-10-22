@@ -75,6 +75,7 @@ Run script with defaults
 python SelectFromModel_RandomForest.py
 ```
 Run script with user input
+```
 python SelectFromModel_RandomForest.py\
   --tax_credit_data_path="your own tax-credit-data path" \
    --reference_database="you own reference_database dict" 
