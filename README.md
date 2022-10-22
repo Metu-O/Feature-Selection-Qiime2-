@@ -104,14 +104,19 @@ Compare method accuracy by running Evaluate_method_accuracy.py (follow comments 
 
 Evaluate_method_accuracy.ipynb is the notebook version of Evaluate_method_accuracy.py, showing all plots and figures. 
 
+Run "help" to see usage.
+```
+python Evaluate_Method_Accuracy.py -h
+```
+Run script with defaults
+```
+python Evaluate_Method_Accuracy.py
+```
+Run script with user input
 ```
 python Evaluate_Method_Accuracy.py\
-  -t tax_credit_data_path \
-  -e expected_results_dir \
-  -m mock_results_fp  \
-  -s results_dirs\
-  -o mock_dir\
-  -u outdir
+  --tax_credit_data_path="your own tax-credit-data path" \
+  --plots_path="you own path where you would like to save plots" 
 ```
 
 # Bash Script runs all codes 
