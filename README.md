@@ -114,9 +114,9 @@ python Evaluate_Method_Accuracy.py\
   -u outdir
 ```
 
-# Bash Script 
+# Bash Script runs all codes 
 
-The bash script was personalized to my personal environments and filepaths. Edit before use.
+Note: The bash script was personalized to my personal environments and filepaths. Edit before use.
 
 # Conclusion
 
