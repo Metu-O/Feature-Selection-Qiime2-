@@ -47,10 +47,9 @@ python Naive_Bayes_Parameters.py
 Run script with user input 
 ```
 python Naive_Bayes_Parameters.py \
-   -t 'your own tax-credit-data path' \
    -n 'reference database name'\
    -s 'path to reference sequences'\
-   -f 'path to reference taxonomy'
+   -t 'path to reference taxonomy'
 ```
   
 2. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. Run "help" to see usage.
@@ -64,10 +63,9 @@ python SelectFromModel_MultinomialNB.py
 Run script with user input 
 ```
 python SelectFromModel_MultinomialNB.py \
-   -t 'your own tax-credit-data path' \
    -n 'reference database name'\
    -s 'path to reference sequences'\
-   -f 'path to reference taxonomy' 
+   -t 'path to reference taxonomy' 
 ```
 
 3. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator. Run "help" to see usage.
@@ -81,10 +79,9 @@ python SelectFromModel_RandomForest.py
 Run script with user input
 ```
 python SelectFromModel_RandomForest.py \
-   -t 'your own tax-credit-data path' \
    -n 'reference database name e.g greengenes or SILVA'\
    -s 'path to reference sequences'\
-   -f 'path to reference taxonomy'
+   -t 'path to reference taxonomy'
 ```
 
 4. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. Run "help" to see usage.
@@ -98,10 +95,9 @@ python SelectFromModel_SDG.py
 Run script with user input
 ```
 python SelectFromModel_SDG.py \
-   -t 'your own tax-credit-data path' \
    -n 'reference database name'\
    -s 'path to reference sequences'\
-   -f 'path to reference taxonomy' 
+   -t 'path to reference taxonomy' 
 ```
 
 Note: running these codes takes hours to run and may require a high computing processor. Do not wait around.
@@ -123,7 +119,6 @@ python Evaluate_Method_Accuracy.py
 Run script with user input
 ```
 python Evaluate_Method_Accuracy.py \
-   -t 'your own tax-credit-data path' \
    -p 'save plots in this directory 
 ```
 
