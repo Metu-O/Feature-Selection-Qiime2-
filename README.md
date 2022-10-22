@@ -47,8 +47,8 @@ python Naive_Bayes_Parameters.py
 Run script with user input 
 ```
 python Naive_Bayes_Parameters.py
-    --tax_credit_data_path="your own tax-credit-data path"
-    --reference_database="you own reference_database dict" 
+    --tax_credit_data_path="your tax-credit-data path"
+    --reference_database="your reference_database dict" 
 ```
   
 2. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. Run "help" to see usage.
@@ -62,8 +62,8 @@ python SelectFromModel_MultinomialNB.py
 Run script with user input 
 ```
 python SelectFromModel_MultinomialNB.py
-  --tax_credit_data_path="your own tax-credit-data path"
-  --reference_database="you own reference_database dict" 
+  --tax_credit_data_path="your tax-credit-data path"
+  --reference_database="your reference_database dict" 
 ```
 
 3. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator. Run "help" to see usage.
@@ -77,8 +77,8 @@ python SelectFromModel_RandomForest.py
 Run script with user input
 ```
 python SelectFromModel_RandomForest.py
-  --tax_credit_data_path="your own tax-credit-data path"
-   --reference_database="you own reference_database dict" 
+  --tax_credit_data_path="your tax-credit-data path"
+   --reference_database="your reference_database dict" 
 ```
 
 4. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. Run "help" to see usage.
@@ -92,8 +92,8 @@ python SelectFromModel_SDG.py
 Run script with user input
 ```
 python SelectFromModel_SDG.py
-  --tax_credit_data_path="your own tax-credit-data path"
-  --reference_database="you own reference_database dict" 
+  --tax_credit_data_path="your tax-credit-data path"
+  --reference_database="your reference_database dict" 
 ```
 
 Note: running these codes takes hours to run and may require a high computing processor. Do not wait around.
@@ -115,8 +115,8 @@ python Evaluate_Method_Accuracy.py
 Run script with user input
 ```
 python Evaluate_Method_Accuracy.py
-  --tax_credit_data_path="your own tax-credit-data path"
-  --plots_path="you own path where you would like to save plots" 
+  --tax_credit_data_path="your tax-credit-data path"
+  --plots_path="path where you would like to save plots" 
 ```
 
 # Bash Script runs all codes 
