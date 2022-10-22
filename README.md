@@ -23,11 +23,21 @@ The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a bas
   ```
   git clone https://github.com/Metu-O/Feature-Selection-Qiime2
   ```
+  
+2. Change directory to the Feature-Selection-Qiime2 you just cloned
 
-# Run codes 
-# ALL CODES MUST BE RUN IN A QIIME2 ENVIRONMENT (see this [link](https://docs.qiime2.org/2022.8/install/) on how to install the QIIME 2 Core 2022.8 distribution).
+  ```
+  cd Feature-Selection-Qiime2
+  ```
 
-Run the feature selection python files in the 'Feature-Selection-Qiime2' directory 
+3. Activate Qiime2 environment
+   (see this [link](https://docs.qiime2.org/2022.8/install/) on how to install the QIIME 2 Core 2022.8 distribution)
+
+4. Run codes 
+
+   using command lines or bash script (BASH SCRIPT MUST BE EDITED TO FIT USER'S PATH) 
+
+# Command lines
 
 1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters. Naive_Bayes_Parameters.py allows user to run codes with defaults or user input. I strongly advise using defaults except you are adept with directories. Run "help" to see usage.
 ```
