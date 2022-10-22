@@ -53,10 +53,18 @@ Run script with user input
 ```
 python Naive_Bayes_Parameters.py \
    -n 'reference database name'\
-   -s 'path to reference sequences'\
-   -t 'path to reference taxonomy'
+   -s 'path to reference sequences. QIIME2 ARTIFACTS ONLY (.qza files)'\
+   -t 'path to reference taxonomy. QIIME2 ARTIFACTS ONLY (.qza files)'
 ```
-  
+
+Here is one example 
+```
+python Naive_Bayes_Parameters.py \
+   -n 'greegenes'\
+   -s '/home/mosele/99_gg_seq.qza'\
+   -t '/home/mosele/99_otu_taxonomy_clean-Copy1.tsv.qza'
+```
+
 2. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. Run "help" to see usage.
 ```
 python SelectFromModel_MultinomialNB.py -h
@@ -69,8 +77,8 @@ Run script with user input
 ```
 python SelectFromModel_MultinomialNB.py \
    -n 'reference database name'\
-   -s 'path to reference sequences'\
-   -t 'path to reference taxonomy' 
+   -s 'path to reference sequences. QIIME2 ARTIFACTS ONLY (.qza files)'\
+   -t 'path to reference taxonomy. QIIME2 ARTIFACTS ONLY (.qza files)' 
 ```
 
 3. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator. Run "help" to see usage.
@@ -85,8 +93,8 @@ Run script with user input
 ```
 python SelectFromModel_RandomForest.py \
    -n 'reference database name e.g greengenes or SILVA'\
-   -s 'path to reference sequences'\
-   -t 'path to reference taxonomy'
+   -s 'path to reference sequences. QIIME2 ARTIFACTS ONLY (.qza files)'\
+   -t 'path to reference taxonomy. QIIME2 ARTIFACTS ONLY (.qza files)'
 ```
 
 4. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. Run "help" to see usage.
@@ -101,8 +109,8 @@ Run script with user input
 ```
 python SelectFromModel_SDG.py \
    -n 'reference database name'\
-   -s 'path to reference sequences'\
-   -t 'path to reference taxonomy' 
+   -s 'path to reference sequences. QIIME2 ARTIFACTS ONLY (.qza files)'\
+   -t 'path to reference taxonomy. QIIME2 ARTIFACTS ONLY (.qza files)' 
 ```
 
 Compare method accuracy by running Evaluate_method_accuracy.py
