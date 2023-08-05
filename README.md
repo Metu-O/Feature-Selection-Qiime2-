@@ -14,17 +14,17 @@ In this approach, the sklearn Random Forest Classifier (RFC) serves as the estim
 
 # 3. SelectFromModel Using Stochastic Gradient Descent Estimator
 
-The sklearn Stochastic Gradient Descent (SGD) classifier is harnessed as the base estimator for feature selection within the classification pipeline. The coef_ attribute from RFC is used as the importance_getter parameter. Learn more about sklearn's SGDClassifier by referring to (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html).  
+The sklearn Stochastic Gradient Descent (SGD) classifier is harnessed as the base estimator for feature selection within the classification pipeline. The coef_ attribute from RFC is used as the importance_getter parameter. Learn more about sklearn's SGDClassifier by referring to https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html.  
 
-# Initializing 
+# Getting Started 
 
-1. Clone Feature-Selection-Qiime2
+1. Clone the Repository
 
   ```
   git clone https://github.com/Metu-O/Feature-Selection-Qiime2
   ```
   
-2. Change directory to the Feature-Selection-Qiime2 you just cloned. Change to your own directory e.g. /home/mosele/Feature-Selection-Qiime2
+2. Navigate to the Repository
 
   ```
   cd Feature-Selection-Qiime2
@@ -32,13 +32,13 @@ The sklearn Stochastic Gradient Descent (SGD) classifier is harnessed as the bas
 
 3. Activate Qiime2 environment
    
-   (see this [link](https://docs.qiime2.org/2022.8/install/) on how to install the QIIME 2 Core 2022.8 distribution)
+   Follow the instructions provided in the [QIIME 2 installation guide](https://docs.qiime2.org/2022.8/install/) to activate the QIIME 2 Core 2022.8 distribution.
 
-4. Run codes 
+4. Run the scripts
 
-   using command lines or bash script (BASH SCRIPT MUST BE EDITED TO FIT USER'S PATH) 
+   Execute the code using command lines or a bash script (customize the bash script according to your path). 
 
-# Command lines
+# Usage
 
 1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters. Naive_Bayes_Parameters.py allows user to run codes with defaults or user input. I strongly advise using defaults except you are adept with directories. Run "help" to see usage and defaults .
 ```
@@ -137,15 +137,15 @@ python Evaluate_Method_Accuracy.py \
    -p 'save plots in this directory 
 ```
 
-Note: running these codes takes hours and may require a high computing processor. Do not wait around.
+Note: Running these scripts can be time-consuming and resource-intensive.
 
-# Bash Script runs all codes 
+# Bash Script (Optional)
 
-Note: The bash script was personalized to my personal environments and filepaths. Edit before use.
+The provided bash script can automate the execution of all codes. However, ensure you customize the script according to your environment and filepaths before use.
 
 # Conclusion
 
-Feature-Selection-Qiime2 performed better than regular qiime2 more than 70% of the time. To find out more about the metrics used for comparison, read my thesis (will be cited once published). 
+The Feature-Selection-Qiime2 repository has demonstrated significant improvement over standard Qiime2 in more than 70% of cases. For further details on the evaluation metrics, refer to the thesis (to be cited upon publication). 
 
 # Citation
 
