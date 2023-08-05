@@ -47,12 +47,15 @@ The sklearn Stochastic Gradient Descent (SGD) classifier is harnessed as the bas
 ```
 python Naive_Bayes_Parameters.py
 ```
-  For custom settings:
 
+  For custom settings:
+  
 ```
 python Naive_Bayes_Parameters.py -n 'database_name' -s 'path_to_sequences.qza' -t 'path_to_taxonomy.qza'
 ```
+
   Example: 
+  
 ```
 python Naive_Bayes_Parameters.py -n 'greengenes' -s '/path/to/sequences.qza' -t '/path/to/taxonomy.qza'
 ```
@@ -60,11 +63,13 @@ python Naive_Bayes_Parameters.py -n 'greengenes' -s '/path/to/sequences.qza' -t 
 2. **SelectFromModel MultinomialNB Script**
 
   To run the classifier with the SelectFromModel method using MultinomialNB estimator:
-
+  
 ```
 python SelectFromModel_MultinomialNB.py
 ```
+
   For custom settings:
+  
 ```
 python SelectFromModel_MultinomialNB.py -n 'database_name' -s 'path_to_sequences.qza' -t 'path_to_taxonomy.qza'
 ```
@@ -72,10 +77,13 @@ python SelectFromModel_MultinomialNB.py -n 'database_name' -s 'path_to_sequences
 3. **SelectFromModel RandomForest Script**
 
   To run the classifier with the SelectFromModel method using RandomForestClassifier estimator:
+  
 ```
 python SelectFromModel_RandomForest.py
 ```
+
   For custom settings:
+  
 ```
 python SelectFromModel_RandomForest.py -n 'database_name' -s 'path_to_sequences.qza' -t 'path_to_taxonomy.qza'
 ```
@@ -84,10 +92,13 @@ python SelectFromModel_RandomForest.py -n 'database_name' -s 'path_to_sequences.
 **
 
   To run the classifier with the SelectFromModel method using Stochastic Gradient Descent (SGD) estimator:
+  
 ```
 python SelectFromModel_SDG.py
 ```
+
   For custom settings:
+  
 ```
 python SelectFromModel_SDG.py -n 'database_name' -s 'path_to_sequences.qza' -t 'path_to_taxonomy.qza'
 ```
@@ -95,11 +106,13 @@ python SelectFromModel_SDG.py -n 'database_name' -s 'path_to_sequences.qza' -t '
 5. **Evaluate Method Accuracy Script**
 
   To compare method accuracy:
+  
 ```
 python Evaluate_Method_Accuracy.py
 ```
 
 For custom output directory:
+
 ```
 python Evaluate_Method_Accuracy.py -p 'output_plots_directory'
 ```
