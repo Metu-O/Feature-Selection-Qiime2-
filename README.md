@@ -1,20 +1,20 @@
 # Feature-Selection-Qiime2
 
-This repository describes the methods used to test different sci-kit learn feature selection methods as part of Qiime2 q2-classifier.
+This repository outlines the methodologies employed to evaluate different scikit-learn feature selection methods within the Qiime2 q2-classifier framework.
 
 # Embedded Feature Selection
 
 # 1. SelectFromModel Using Multinomial Naive Bayes Estimator
 
-The sklearn multinomial naive bayes (MultinomialNB) classifier was used as a base estimator in the feature selection step of my classification pipeline. RFC has a feature_log_prob_ attribute after fitting, which was used as the importance_getter parameter. For more details about sklearn's MultinomialNB, click on this [link](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html).
+The sklearn Multinomial Naive Bayes (MultinomialNB) classifier is utilized as the estimator for feature selection within the classification pipeline. The feature_log_prob_ attribute from RFC is employed as the importance_getter parameter. For more details about sklearn's MultinomialNB, refer to this [link](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html).
 
 # 2. SelectFromModel Using Random Forest Estimator
 
-The sklearn random forest classifier (RFC) was used as a base estimator in the feature selection step of my classification pipeline. RFC has a feature_importances_ attribute after fitting, which was used as the importance_getter parameter. For more details on sklearn's SelectFromModel, click on this [link](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectFromModel.html). For more details about sklearn's RFC, click on this other [link](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html). 
+In this approach, the sklearn Random Forest Classifier (RFC) serves as the estimator for feature selection within the classification pipeline. The feature_importances_ attribute from RFC is used as the importance_getter parameter. For further information on sklearn's SelectFromModel, visit this [link](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectFromModel.html). Detailed information about sklearn's RFC is available [here](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html). 
 
 # 3. SelectFromModel Using Stochastic Gradient Descent Estimator
 
-The sklearn stochastic gradient descent (SGD) classifier was used as a base estimator in the feature selection step of my classification pipeline. RFC has a coef_ attribute after fitting, which was used as the importance_getter parameter. For more details about sklearn's SGDClassifier, click on this [link](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html).  
+The sklearn Stochastic Gradient Descent (SGD) classifier is harnessed as the base estimator for feature selection within the classification pipeline. The coef_ attribute from RFC is used as the importance_getter parameter. Learn more about sklearn's SGDClassifier by referring to (https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html).  
 
 # Initializing 
 
