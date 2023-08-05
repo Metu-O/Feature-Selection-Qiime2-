@@ -88,8 +88,7 @@ python SelectFromModel_RandomForest.py
 python SelectFromModel_RandomForest.py -n 'database_name' -s 'path_to_sequences.qza' -t 'path_to_taxonomy.qza'
 ```
 
-4. **SelectFromModel Stochastic Gradient Descent Script
-**
+4. **SelectFromModel Stochastic Gradient Descent Script**
 
   To run the classifier with the SelectFromModel method using Stochastic Gradient Descent (SGD) estimator:
   
