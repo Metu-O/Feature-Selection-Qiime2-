@@ -41,6 +41,7 @@ The sklearn Stochastic Gradient Descent (SGD) classifier is harnessed as the bas
 # Usage
 
 1. **Naive Bayes Parameters Script**
+  
    To run the Naive Bayes classifier with default parameters, use:
    
 ```
@@ -56,74 +57,51 @@ python Naive_Bayes_Parameters.py -n 'database_name' -s 'path_to_sequences.qza' -
 python Naive_Bayes_Parameters.py -n 'greengenes' -s '/path/to/sequences.qza' -t '/path/to/taxonomy.qza'
 ```
 
+2. **SelectFromModel MultinomialNB Script**
 
+  To run the classifier with the SelectFromModel method using MultinomialNB estimator:
 
 ```
-
-2. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. Run "help" to see usage.
+python SelectFromModel_MultinomialNB.py
 ```
-python SelectFromModel_MultinomialNB.py -h
+  For custom settings:
 ```
-Run script below to use defaults
-```
-python SelectFromModel_MultinomialNB.py 
-```
-Run script below with to change defaults with user input
-```
-python SelectFromModel_MultinomialNB.py \
-   -n 'reference database name'\
-   -s 'path to reference sequences. QIIME2 ARTIFACTS ONLY (.qza files)'\
-   -t 'path to reference taxonomy. QIIME2 ARTIFACTS ONLY (.qza files)' 
+python SelectFromModel_MultinomialNB.py -n 'database_name' -s 'path_to_sequences.qza' -t 'path_to_taxonomy.qza'
 ```
 
-3. SelectFromModel_RandomForest.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the RandomForestClassifier estimator. Run "help" to see usage.
-```
-python SelectFromModel_RandomForest.py -h
-```
-Run script below to use defaults
+3. **SelectFromModel RandomForest Script**
+
+  To run the classifier with the SelectFromModel method using RandomForestClassifier estimator:
 ```
 python SelectFromModel_RandomForest.py
 ```
-Run script below with to change defaults with user input
+  For custom settings:
 ```
-python SelectFromModel_RandomForest.py \
-   -n 'reference database name e.g greengenes or SILVA'\
-   -s 'path to reference sequences. QIIME2 ARTIFACTS ONLY (.qza files)'\
-   -t 'path to reference taxonomy. QIIME2 ARTIFACTS ONLY (.qza files)'
+python SelectFromModel_RandomForest.py -n 'database_name' -s 'path_to_sequences.qza' -t 'path_to_taxonomy.qza'
 ```
 
-4. SelectFromModel_SDG.py code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the stochastic gradient descent (SDG) estimator. Run "help" to see usage.
-```
-python SelectFromModel_SDG.py -h
-```
-Run script below to use defaults
+4. **SelectFromModel Stochastic Gradient Descent Script
+**
+
+  To run the classifier with the SelectFromModel method using Stochastic Gradient Descent (SGD) estimator:
 ```
 python SelectFromModel_SDG.py
 ```
-Run script below with to change defaults with user input
+  For custom settings:
 ```
-python SelectFromModel_SDG.py \
-   -n 'reference database name'\
-   -s 'path to reference sequences. QIIME2 ARTIFACTS ONLY (.qza files)'\
-   -t 'path to reference taxonomy. QIIME2 ARTIFACTS ONLY (.qza files)' 
+python SelectFromModel_SDG.py -n 'database_name' -s 'path_to_sequences.qza' -t 'path_to_taxonomy.qza'
 ```
 
-Compare method accuracy by running Evaluate_method_accuracy.py
+5. **Evaluate Method Accuracy Script**
 
-NOTE: Evaluate_method_accuracy.ipynb is the notebook version of Evaluate_method_accuracy.py, showing all plots and figures. 
-
-Run "help" to see usage.
-```
-python Evaluate_Method_Accuracy.py -h
-```
-Run script below to use defaults
+  To compare method accuracy:
 ```
 python Evaluate_Method_Accuracy.py
 ```
-Run script below with to change defaults with user input
+
+For custom output directory:
 ```
-python Evaluate_Method_Accuracy.py \
-   -p 'save plots in this directory 
+python Evaluate_Method_Accuracy.py -p 'output_plots_directory'
 ```
 
 Note: Running these scripts can be time-consuming and resource-intensive.
