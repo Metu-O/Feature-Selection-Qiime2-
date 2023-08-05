@@ -40,35 +40,24 @@ The sklearn Stochastic Gradient Descent (SGD) classifier is harnessed as the bas
 
 # Usage
 
-1. Naive_Bayes_Parameters.py contains code that runs the naive bayes classifier with no feature selection using qiime2 q2-classifier recommended parameters. Naive_Bayes_Parameters.py allows user to run codes with defaults or user input. I strongly advise using defaults except you are adept with directories. Run "help" to see usage and defaults .
+1. **Naive Bayes Parameters Script**
+   To run the Naive Bayes classifier with default parameters, use:
+   
 ```
-python Naive_Bayes_Parameters.py -h
+python Naive_Bayes_Parameters.py
 ```
-Example: 
-
-
-
-
-
-Run script below to use defaults
+  For custom settings:
 
 ```
-python Naive_Bayes_Parameters.py 
+python Naive_Bayes_Parameters.py -n 'database_name' -s 'path_to_sequences.qza' -t 'path_to_taxonomy.qza'
 ```
-Run script below with to change defaults with user input 
+  Example: 
 ```
-python Naive_Bayes_Parameters.py \
-   -n 'reference database name'\
-   -s 'path to reference sequences. QIIME2 ARTIFACTS ONLY (.qza files)'\
-   -t 'path to reference taxonomy. QIIME2 ARTIFACTS ONLY (.qza files)'
+python Naive_Bayes_Parameters.py -n 'greengenes' -s '/path/to/sequences.qza' -t '/path/to/taxonomy.qza'
 ```
 
-Here is one example 
-```
-python Naive_Bayes_Parameters.py \
-   -n 'greegenes'\
-   -s '/home/mosele/99_gg_seq.qza'\
-   -t '/home/mosele/99_otu_taxonomy_clean-Copy1.tsv.qza'
+
+
 ```
 
 2. SelectFromModel_MultinomialNB.py contains code that runs the classifiers with a sklearn embedded feature selection method, SelectFromModel, using the MultinomialNB estimator. Run "help" to see usage.
